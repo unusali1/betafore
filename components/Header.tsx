@@ -14,7 +14,13 @@ import {
 import logo from "@/public/assets/logo.png";
 import Image from "next/image";
 
-const Header = () => {
+interface BestDealsProps {
+  categories: {
+    data: Category[];
+  };
+}
+
+const Header = ({ categories }: BestDealsProps) => {
   return (
     <>
       <div className="bg-[#03484D] text-white sticky top-0 z-50">
@@ -28,7 +34,13 @@ const Header = () => {
               <div className="flex w-1/2 bg-white rounded-md overflow-hidden shadow-sm">
                 <select className="px-4 py-2 text-sm text-gray-700 bg-gray-50 border-r outline-none">
                   <option>All Categories</option>
+                  {categories?.data.map((category) => (
+                    <option key={category.id}>
+                      {category.name.toUpperCase()}
+                    </option>
+                  ))}
                 </select>
+
                 <div className="flex flex-1 items-center">
                   <input
                     type="text"
@@ -41,13 +53,14 @@ const Header = () => {
                 </div>
               </div>
             </div>
-           
+
             <div className="flex items-center gap-4">
               <div className="hidden lg:flex items-center gap-2 text-xs">
                 <Headphones className="h-4 w-4" />
                 <div>
-                  <p className="text-xs opacity-80">Call us now</p>
+                  <p className="text-xs ">Call us now</p>
                   <p className="font-semibold">+011 5827918</p>
+                  <p className="font-semibold">Sing in</p>
                 </div>
               </div>
 

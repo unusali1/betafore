@@ -12,7 +12,7 @@ export default async function Home() {
 
   return (
     <>
-      <Header />
+      <Header categories={categories}/>
       <HeroSection />
       <div
         style={{
