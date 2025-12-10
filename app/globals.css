@@ -27,13 +27,28 @@ body {
 
 #heroSection {
   background-image: url("/assets/heroSection.png");
-  background-size: cover;
+  background-size: inherit;
   background-repeat: no-repeat;
-  background-position: right;
-  height: 100%;
+  background-position: top;
+  height: 53vh;
 }
 
+@media (max-width: 768px) {
+  #heroSection {
+    background-image: url("/assets/heroSection.png");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 380px;
+  }
+}
 
-
-
-
+@media (max-width: 480px) {
+  #heroSection {
+    background-image: url("/assets/heroSection.png");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 380px;
+  }
+}

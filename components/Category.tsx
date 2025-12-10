@@ -42,9 +42,9 @@ export default function Category() {
     emblaApi.on("select", updateButtons);
     emblaApi.on("reInit", updateButtons);
     emblaApi.on("init", updateButtons);
-
     updateButtons();
-  }, [emblaApi]);
+
+  }, [emblaApi,]);
 
   const scrollPrev = () => emblaApi?.scrollPrev();
   const scrollNext = () => emblaApi?.scrollNext();

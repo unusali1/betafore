@@ -26,14 +26,16 @@ interface BestDealsProps {
 const BestDeals = ({ categories }: BestDealsProps) => {
   const [selectedSlug, setSelectedSlug] = useState<string>("");
   const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState<boolean>(true); // start as true
+  const [loading, setLoading] = useState<boolean>(true); 
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     if (categories?.data?.length > 0 && !selectedSlug) {
       setSelectedSlug(categories.data[0].name);
     }
+  }, [categories?.data, selectedSlug]);
 
+  useEffect(() => {
     if (!selectedSlug) return;
 
     const fetchProducts = async () => {
@@ -50,7 +52,7 @@ const BestDeals = ({ categories }: BestDealsProps) => {
         const data = await response.json();
         setProducts(data?.data || []);
         setLoading(false);
-      } catch (err: any) {
+      } catch (err) {
         console.error("Fetch error:", err);
         setError("Failed to load products");
         setProducts([]);
@@ -60,7 +62,7 @@ const BestDeals = ({ categories }: BestDealsProps) => {
     };
 
     fetchProducts();
-  }, [selectedSlug, categories?.data]);
+  }, [selectedSlug]);
 
   return (
     <section className="py-12">
