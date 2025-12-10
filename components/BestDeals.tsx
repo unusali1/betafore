@@ -6,7 +6,6 @@ import React, { useEffect, useState } from "react";
 interface Category {
   id: string | number;
   name: string;
-  slug: string;
 }
 
 interface Product {

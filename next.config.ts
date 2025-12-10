@@ -6,9 +6,15 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "fakestoreapi.com",
-        port: "",          // leave empty if default
-        pathname: "/**",   // allow all paths from this domain
+        port: "",         
+        pathname: "/**",   
       },
+      
+      {
+      protocol: "https",
+      hostname: "mm-assesment-server.vercel.app",
+      pathname: "/**"
+    }
     ],
   },
 };

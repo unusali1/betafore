@@ -14,6 +14,11 @@ import {
 import logo from "@/public/assets/logo.png";
 import Image from "next/image";
 
+interface Category {
+  id: string | number;
+  name: string;
+}
+
 interface BestDealsProps {
   categories: {
     data: Category[];
