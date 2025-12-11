@@ -1,36 +1,78 @@
-import React from 'react'
+"use client";
+import { useState, useEffect } from "react";
+import heroSection from "../public/assets/heroSection.png";
 
-const HeroSection = () => {
+const slides = [
+  {
+    title: "Shop Computer\n& experience",
+    desc: "You Cannot Inspect Quality Into The Product It Is Already There\nI Am Not A Product Of My Circumstances, I Am A Product Of My Decisions.",
+    btn: "View More",
+  },
+  {
+    title: "Shop Computer\n& experience",
+    desc: "You Cannot Inspect Quality Into The Product It Is Already There\nI Am Not A Product Of My Circumstances, I Am A Product Of My Decisions.",
+    btn: "View More",
+  },
+  {
+    title: "Shop Computer\n& experience",
+    desc: "You Cannot Inspect Quality Into The Product It Is Already There\nI Am Not A Product Of My Circumstances, I Am A Product Of My Decisions.",
+    btn: "View More",
+  },
+];
+
+export default function HeroCarousel() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const prevSlide = () =>
+    setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
+
   return (
-     <div  className="w-full">
-      <section className="relative sm:h-96 h-[40vh] w-full ">
-        <div className="relative h-full">
-          <div  id="heroSection" className="absolute inset-0 transition-opacity duration-1000" />
-          <div className="absolute inset-0 transition-opacity duration-1000">
+    <section className="relative sm:h-96 h-[50vh] w-full bg-[#F3EDC9]">
+      <div className="relative h-full">
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === current ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-right bg-no-repeat"
+              style={{
+                background: `url(${heroSection.src})`,
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+              }}
+            />
+
             <div className="relative h-full flex">
               <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10  w-full">
-                <div className="text-left z-10 mt-12">
-                  <h1 className="text-4xl md:text-5xl lg:text-4xl font-normal text-black leading-tight whitespace-pre-line">
-                    Shop{" "}
-                    <span className="text-[#0DAEB9]">
-                      Computer <br />& experience
-                    </span>
-                  </h1>
-
+                <div className="text-left z-10">
+                  <h1
+                    className="mt-4 text-4xl md:text-5xl lg:text-6xl font-bold text-teal-700 leading-tight whitespace-pre-line"
+                    dangerouslySetInnerHTML={{
+                      __html: slide.title.replace("\n", "<br />"),
+                    }}
+                  />
                   <p className="text-gray-700 mt-6 text-lg leading-relaxed whitespace-pre-line">
-                    You cannot inspect quality into the product; it is already
-                    there. <br />I am not a product of my circumstances. I am a
-                    product of my decisions.
+                    {slide.desc}
                   </p>
-
-                  <button className="mt-8 bg-[#14B1F0] hover:bg-teal-700 text-white font-medium px-8 py-4 rounded transition">
-                    View More
+                  <button className="sm:mt-8 mt-2 bg-teal-600 hover:bg-teal-700 text-white font-medium px-8 py-2 sm:py-4 rounded transition">
+                    {slide.btn}
                   </button>
                 </div>
 
-                <div className="hidden relative sm:flex justify-end">
+                <div className="relative flex justify-end">
                   <div
-                    className="absolute top-12 right-0 rounded-full w-32 h-32 md:w-40 md:h-40 flex flex-col items-center justify-center shadow-2xl text-4xl font-bold z-20"
+                    className="hidden absolute top-8 right-4 md:right-12 rounded-full w-32 h-32 md:w-40 md:h-40 sm:flex flex-col items-center justify-center shadow-2xl text-4xl font-bold z-20"
                     style={{
                       backgroundImage:
                         "linear-gradient(to bottom, #FDC830 , #F37335)",
@@ -38,23 +80,31 @@ const HeroSection = () => {
                       backgroundRepeat: "no-repeat",
                     }}
                   >
-                    <span className="text-5xl md:text-6xl">40%</span>
-                    <span className="text-lg md:text-xl -mt-2">Off</span>
+                    <span className="text-5xl md:text-6xl text-white">40%</span>
+                    <span className="text-lg md:text-xl -mt-2 text-white">
+                      Off
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        ))}
+      </div>
 
-        <div className="hidden absolute bottom-10 left-1/2 -translate-x-1/2 z-30 sm:flex gap-3">
-          <button className="h-2 rounded-full transition bg-[#034E53] w-8" />
-          <button className="h-2 rounded-full transition bg-[#AA9393] w-8" />
-          <button className="h-2 rounded-full transition bg-[#AA9393] w-8" />
-        </div>
-      </section>
-    </div>
-  )
+      <div className="absolute bottom-0 sm:bottom-10 left-1/2 -translate-x-1/2 z-30 flex gap-3">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrent(index)}
+            className={`w-3 h-3 rounded-full transition ${
+              index === current
+                ? "bg-[#034E53] w-8"
+                : " hover:bg-white/90 w-8 bg-[#AA9393]"
+            }`}
+          />
+        ))}
+      </div>
+    </section>
+  );
 }
-
-export default HeroSection

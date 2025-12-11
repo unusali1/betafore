@@ -22,7 +22,7 @@ export default function Category() {
     align: "start",
     slidesToScroll: 1,
     breakpoints: {
-      "(min-width: 640px)": { slidesToScroll: 2 }, 
+      "(min-width: 640px)": { slidesToScroll: 2 },
       "(min-width: 1024px)": { slidesToScroll: 4 },
     },
   });
@@ -43,8 +43,7 @@ export default function Category() {
     emblaApi.on("reInit", updateButtons);
     emblaApi.on("init", updateButtons);
     updateButtons();
-
-  }, [emblaApi,]);
+  }, [emblaApi]);
 
   const scrollPrev = () => emblaApi?.scrollPrev();
   const scrollNext = () => emblaApi?.scrollNext();
@@ -79,7 +78,7 @@ export default function Category() {
       </div>
 
       <button
-        className={`absolute -lfet-2 sm:-left-12 top-1/2 -translate-y-1/2 bg-white rounded-full shadow-lg p-2 transition-opacity ${
+        className={`absolute -lfet-2 sm:-left-8 top-1/2 -translate-y-1/2 bg-white rounded-full shadow-lg p-2 transition-opacity ${
           prevBtnDisabled
             ? "opacity-50 cursor-not-allowed"
             : "opacity-100 hover:opacity-80"
@@ -92,7 +91,7 @@ export default function Category() {
       </button>
 
       <button
-        className={`absolute right-1 sm:-right-12 top-1/2 -translate-y-1/2 bg-white rounded-full shadow-lg p-2 transition-opacity ${
+        className={`absolute right-1 sm:-right-14 top-1/2 -translate-y-1/2 bg-white rounded-full shadow-lg p-2 transition-opacity ${
           nextBtnDisabled
             ? "opacity-50 cursor-not-allowed"
             : "opacity-100 hover:opacity-80"
