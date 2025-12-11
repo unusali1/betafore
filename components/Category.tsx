@@ -56,7 +56,7 @@ export default function Category() {
           {categories.map((category) => (
             <div
               key={category.id}
-              className="flex-none ml-12 w-72 lg:w-1/4 h-52 sm:h-64 relative group border border-white bg-cover bg-center bg-no-repeat"
+              className="flex-none ml-14 sm:ml-12 w-72 lg:w-1/4 h-52 sm:h-64 relative group border border-white bg-cover bg-center bg-no-repeat"
               style={{
                 backgroundImage: `url(${category.img.src})`,
               }}
@@ -92,7 +92,7 @@ export default function Category() {
       </button>
 
       <button
-        className={`absolute -right-2 sm:-right-12 top-1/2 -translate-y-1/2 bg-white rounded-full shadow-lg p-2 transition-opacity ${
+        className={`absolute right-1 sm:-right-12 top-1/2 -translate-y-1/2 bg-white rounded-full shadow-lg p-2 transition-opacity ${
           nextBtnDisabled
             ? "opacity-50 cursor-not-allowed"
             : "opacity-100 hover:opacity-80"

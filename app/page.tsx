@@ -20,6 +20,7 @@ export default async function Home() {
           backgroundSize: "100% 100%",
           backgroundRepeat: "no-repeat",
         }}
+        className="sm:mt-0 mt-24"
       >
         <Category />
       </div>

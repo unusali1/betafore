@@ -27,10 +27,9 @@ body {
 
 #heroSection {
   background-image: url("/assets/heroSection.png");
-  background-size: inherit;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
-  height: 53vh;
+ 
 }
 
 @media (max-width: 768px) {
@@ -39,7 +38,7 @@ body {
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 380px;
+    height: 450px;
   }
 }
 
@@ -49,6 +48,6 @@ body {
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 380px;
+    height: 450px;
   }
 }
