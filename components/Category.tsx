@@ -51,16 +51,16 @@ export default function Category() {
   return (
     <section className="container mx-auto py-12 relative">
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex gap-6">
+        <div className="flex gap-4">
           {categories.map((category) => (
             <div
               key={category.id}
-              className="flex-none ml-14 sm:ml-12 w-72 lg:w-1/4 h-52 sm:h-64 relative group border border-white bg-cover bg-center bg-no-repeat"
+              className="relative flex-none ml-14 sm:ml-8 w-72 lg:w-1/4 h-52 sm:h-64 group border border-white bg-cover bg-center bg-no-repeat"
               style={{
                 backgroundImage: `url(${category.img.src})`,
               }}
             >
-              <div className="absolute bottom-4 left-[132px] sm:left-[149px] -translate-x-1/2 w-full">
+              <div className="absolute bottom-4 left-32 lg:left-36 xl:left-36 2xl:40    -translate-x-1/2 w-full">
                 <div className="w-0 h-0 border-t-8 border-t-transparent border-b-0 border-b-transparent border-r-10 border-r-black shadow-2xl" />
 
                 <div className="w-[85%] bg-white shadow-xl px-5 py-4 flex justify-between items-center">

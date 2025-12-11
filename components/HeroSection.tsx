@@ -35,7 +35,7 @@ export default function HeroCarousel() {
   const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
 
   return (
-    <section className="relative sm:h-96 h-[50vh] w-full bg-[#F3EDC9]">
+    <section className="relative sm:h-96 h-[50vh] w-full ">
       <div className="relative h-full">
         {slides.map((slide, index) => (
           <div
@@ -48,7 +48,7 @@ export default function HeroCarousel() {
               className="absolute inset-0 bg-cover bg-right bg-no-repeat"
               style={{
                 background: `url(${heroSection.src})`,
-                backgroundSize: "contain",
+                backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
               }}
             />
@@ -72,7 +72,7 @@ export default function HeroCarousel() {
 
                 <div className="relative flex justify-end">
                   <div
-                    className="hidden absolute top-8 right-4 md:right-12 rounded-full w-32 h-32 md:w-40 md:h-40 sm:flex flex-col items-center justify-center shadow-2xl text-4xl font-bold z-20"
+                    className="hidden absolute top-8 right-4 md:right-0 lg:right-0 rounded-full w-32 h-32 md:w-40 md:h-40 sm:flex flex-col items-center justify-center shadow-2xl text-4xl font-bold z-20"
                     style={{
                       backgroundImage:
                         "linear-gradient(to bottom, #FDC830 , #F37335)",
@@ -92,7 +92,7 @@ export default function HeroCarousel() {
         ))}
       </div>
 
-      <div className="absolute bottom-0 sm:bottom-10 left-1/2 -translate-x-1/2 z-30 flex gap-3">
+      <div className="absolute bottom-1 sm:bottom-10 left-1/2 -translate-x-1/2 z-30 flex gap-3">
         {slides.map((_, index) => (
           <button
             key={index}
