@@ -68,7 +68,7 @@ export default function HeroCarousel() {
 
                 <div className="relative flex justify-end">
                   <div
-                    className="hidden absolute top-8 lg:top-12 right-4 md:right-0 lg:right-12 2xl:-right-8 rounded-full w-32 h-32 md:w-40 md:h-40 sm:flex flex-col items-center justify-center shadow-2xl text-4xl font-bold z-20"
+                    className="hidden absolute top-8 lg:top-12 right-4 md:right-0 lg:right-1 2xl:-right-10 rounded-full w-32 h-32 md:w-40 md:h-40 sm:flex flex-col items-center justify-center shadow-2xl text-4xl font-bold z-20"
                     style={{
                       backgroundImage:
                         "linear-gradient(to bottom, #FDC830 , #F37335)",
