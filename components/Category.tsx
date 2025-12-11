@@ -60,7 +60,7 @@ export default function Category() {
                 backgroundImage: `url(${category.img.src})`,
               }}
             >
-              <div className="absolute bottom-4 left-32 lg:left-37 xl:44 2xl:left-44 -translate-x-1/2 w-full">
+              <div className="absolute bottom-4 left-32 lg:left-37 xl:44 2xl:left-45 -translate-x-1/2 w-full">
                 <div className="w-0 h-0 border-t-8 border-t-transparent border-b-0 border-b-transparent border-r-10 border-r-black shadow-2xl" />
 
                 <div className="w-[85%] bg-white shadow-xl px-5 py-4 flex justify-between items-center">
