@@ -45,11 +45,12 @@ export default function HeroCarousel() {
             }`}
           >
             <div
-              className="absolute inset-0 bg-cover bg-right bg-no-repeat"
+              className="absolute inset-0 bg-cover bg-top bg-no-repeat"
               style={{
                 background: `url(${heroSection.src})`,
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
+                backgroundPosition:"top"
               }}
             />
 
