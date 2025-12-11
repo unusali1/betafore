@@ -68,7 +68,7 @@ export default function HeroCarousel() {
 
                 <div className="relative flex justify-end">
                   <div
-                    className="hidden absolute top-8 lg:top-12 right-4 md:right-0 lg:right-12 rounded-full w-32 h-32 md:w-40 md:h-40 sm:flex flex-col items-center justify-center shadow-2xl text-4xl font-bold z-20"
+                    className="hidden absolute top-8 lg:top-12 right-4 md:right-0 lg:right-12 2xl:right-6 rounded-full w-32 h-32 md:w-40 md:h-40 sm:flex flex-col items-center justify-center shadow-2xl text-4xl font-bold z-20"
                     style={{
                       backgroundImage:
                         "linear-gradient(to bottom, #FDC830 , #F37335)",
@@ -88,7 +88,7 @@ export default function HeroCarousel() {
         ))}
       </div>
 
-      <div className="absolute bottom-1 sm:bottom-10 left-1/2 -translate-x-1/2 z-30 flex gap-3">
+      <div className="absolute bottom-1 sm:bottom-10 2xl:border-2 left-1/2 -translate-x-1/2 z-30 flex gap-3">
         {slides.map((_, index) => (
           <button
             key={index}
